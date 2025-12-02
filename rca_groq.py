@@ -11,7 +11,7 @@ def generate_rca_with_groq(incident_description):
         client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
         response = client.chat.completions.create(
-            model="llama3-8b-1024",  # UPDATED MODEL
+            model="llama3-8b",  # UPDATED MODEL
             messages=[
                 {"role": "system", "content": "You are an expert in Root Cause Analysis (RCA)."},
                 {"role": "user",
