@@ -11,7 +11,7 @@ def generate_rca_with_groq(incident_description):
         client = Groq(api_key=os.environ.get("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"))
 
         response = client.chat.completions.create(
-            model="llama3-8b",  # UPDATED MODEL
+            model="llama-3.1-8b-instant",  # UPDATED MODEL
             messages=[
                 {"role": "system", "content": "You are an expert in Root Cause Analysis (RCA)."},
                 {"role": "user",
@@ -20,7 +20,7 @@ def generate_rca_with_groq(incident_description):
             temperature=0.3
         )
 
-        return response.choices[0].message["content"]
+        return response.choices[0].message.content
 
     except Exception as e:
         print("Unexpected error:", e)
