@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from groq import APIStatusError  # for nicer error messages
 
+load_dotenv()
 
 def generate_rca_with_groq(incident_description):
     try:
