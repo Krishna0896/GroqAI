@@ -29,11 +29,7 @@ def generate_rca_with_groq(incident_description):
 
 # Example usage
 if __name__ == "__main__":
-    incident = """
-    Server went down for 45 minutes due to a database connection timeout.
-    Impact: Users unable to log in.
-    """
-
-    rca = generate_rca_with_groq(incident)
+    incident = input("Enter your incident description:\n")
     print("\n--- RCA OUTPUT ---\n")
-    print(rca)
+    print(generate_rca_with_groq(incident))
+
